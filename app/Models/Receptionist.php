@@ -10,6 +10,8 @@ class Receptionist extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'address', 'document', 'phone', 'status', 'observation'];
+
     public function rental(): HasMany
     {
         return $this->hasMany(Rental::class);

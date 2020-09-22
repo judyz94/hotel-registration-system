@@ -10,6 +10,8 @@ class Status extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name'];
+
     public function rental(): HasMany
     {
         return $this->hasMany(Rental::class);

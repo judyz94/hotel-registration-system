@@ -10,6 +10,8 @@ class Nationality extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['country', 'nationality'];
+
     public function client(): HasMany
     {
         return $this->hasMany(Client::class);
