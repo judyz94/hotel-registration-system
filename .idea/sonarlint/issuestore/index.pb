@@ -21,11 +21,7 @@ Q
 !resources/views/welcome.blade.php,0/c/0c96dd63e07fb2e889aeaea5cbabd89d0d09f1fb
 =
 composer.json,3/9/3957b91a0d8450cea0115cfd5af69eac90d75897
-P
- resources/views/prueba.blade.php,8/5/85ccba76991389350a872e6e532110901c77e92f
 J
 resources/js/javascript.js,b/a/ba918d0fe5c523cc5ef6f22c76a8d909543f80a0
 >
 routes/web.php,6/b/6b9a783d9b43fee50fd28f56dbd1856d2608f305
-P
- resources/views/layout.blade.php,9/3/93684dda53260cbe02fc7e707b9ec312adc78073

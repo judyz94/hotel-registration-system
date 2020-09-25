@@ -9,6 +9,8 @@
     <title>Página principal</title>
 
     <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="back">
@@ -18,25 +20,21 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">Hotel Soft</div>
         <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action bg-light">Alquileres</a>
+            <a href="{{ route('rentals.index') }}" class="list-group-item list-group-item-action bg-light">Alquileres</a>
 
-            <a class="nav-link dropdown-toggle" href="#" id="habitaciones" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="list-group-item list-group-item-action bg-light" href="#" id="habitaciones" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Habitaciones
             </a>
-            <div class="dropdown-menu" aria-labelledby="habitaciones" data-toggle="dropdown">
-                <a class="dropdown-item" href="habitacion.html">Habitaciones</a>
-                <a class="dropdown-item" href="tipo-habitacion.html">Tipos de habitaciones</a>
-            </div>
+                <a class="dropdown-item" href="{{ route('rooms.index') }}">Habitaciones</a>
+                <a class="dropdown-item" href="{{ route('types.index') }}">Tipos de habitaciones</a>
 
-            <a class="nav-link dropdown-toggle" href="#" id="clientes" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="list-group-item list-group-item-action bg-light" href="#" id="clientes" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Clientes
             </a>
-            <div class="dropdown-menu" aria-labelledby="clientes">
-                <a class="dropdown-item" href="cliente.html">Clientes</a>
-                <a class="dropdown-item" href="nacionalidad.html">Nacionalidades</a>
-            </div>
+                <a class="dropdown-item" href="{{ route('clients.index') }}">Clientes</a>
+                <a class="dropdown-item" href="{{ route('nationalities.index') }}">Nacionalidades</a>
 
-            <a href="#" class="list-group-item list-group-item-action bg-light">Registradores</a>
+            <a href="{{ route('receptionists.index') }}" class="list-group-item list-group-item-action bg-light">Registradores</a>
         </div>
     </div>
     <!-- /#sidebar-wrapper -->

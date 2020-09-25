@@ -1,5 +1,12 @@
 <?php
 
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\NationalityController;
+use App\Http\Controllers\ReceptionistController;
+use App\Http\Controllers\RentalController;
+use App\Http\Controllers\RentalStatusController;
+use App\Http\Controllers\RoomController;
+use App\Http\Controllers\RoomTypeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,13 +29,14 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
 Route::resources([
-    'clients'       => 'ClientController',
-    'nationalities' => 'NationalityController',
-    'rooms'         => 'RoomController',
-    'types'         => 'RoomTypeController',
-    'receptionists' => 'ReceptionistController',
-    'statuses'      => 'RentalStatusController'
+    'clients'       => ClientController::class,
+    'nationalities' => NationalityController::class,
+    'rooms'         => RoomController::class,
+    'types'         => RoomTypeController::class,
+    'receptionists' => ReceptionistController::class,
+    'statuses'      => RentalStatusController::class,
 ]);
 
-Route::resource('rentals', 'RentalController')->except(['destroy']);
+Route::resource('rentals', RentalController::class)->except(['destroy']);

@@ -3,7 +3,6 @@
 }
 
 #sidebar-wrapper {
-    background-color: #2d3748;
     min-height: 240vh;
     margin-left: -15rem;
     -webkit-transition: margin .25s ease-out;
