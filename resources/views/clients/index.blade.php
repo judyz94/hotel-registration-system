@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-xl-14">
+            <div class="col-xl">
 
                 @if(session('info'))
                     <div class="container">
@@ -97,3 +97,11 @@
         </div>
     </div>
 @endsection
+
+@push('modals')
+    @include('modals.confirm_delete')
+@endpush
+
+@push('scripts')
+    <script src="{{ asset(mix('js/delete-element.js')) }}"></script>
+@endpush
