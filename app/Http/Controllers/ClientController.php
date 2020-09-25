@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use App\Models\Nationality;
-use App\Models\Rental;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
@@ -55,14 +54,13 @@ class ClientController extends Controller
      * Display the specified resource.
      *
      * @param Client $client
-     * @param Rental $rentals
      * @return Application|Factory|View
      */
-    public function show(Client $client, Rental $rentals)
+    public function show(Client $client)
     {
         $nationalities = Nationality::all();
 
-        return view('clients.show',  compact('nationalities', 'client', 'rentals'));
+        return view('clients.show',  compact('nationalities', 'client'));
     }
 
     /**
