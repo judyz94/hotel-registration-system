@@ -71,9 +71,7 @@ class NationalityController extends Controller
      */
     public function edit(Nationality $nationality)
     {
-        $nationalities = Nationality::all();
-
-        return view('nationalities.edit',  compact('nationalities', 'nationality'));
+        return view('nationalities.edit',  compact( 'nationality'));
     }
 
     /**

@@ -19,54 +19,56 @@
 
                 <div class="card shadow-lg">
                     <div class="card-header d-flex justify-content-between">
-                        <h3 class="card-title mb-0"><strong>Clientes <i class="fas fa-users"></i></strong></h3>
+                        <h3 class="card-title mb-0"><strong>Registradores <i class="fas fa-users"></i></strong></h3>
                     </div>
 
                     <!-- Create new client -->
                     <nav class="navbar navbar-light bg-light">
-                        <a href="{{ route('clients.create') }}"
+                        <a href="{{ route('receptionists.create') }}"
                            class="btn btn-success">
-                            <i class="fas fa-plus"></i> Crear nuevo cliente
+                            <i class="fas fa-plus"></i> Crear nuevo registrador
                         </a>
                     </nav>
 
-                    <!-- Clients list -->
+                    <!-- receptionists list -->
                     <div class="table-responsive-xl">
                         <table class="table table-hover">
                             <thead>
                             <tr>
                                 <th>{{ __('Nombre') }}</th>
                                 <th>{{ __('Documento') }}</th>
-                                <th>{{ __('Nacionalidad') }}</th>
                                 <th>{{ __('Teléfono') }}</th>
                                 <th>{{ __('Dirección') }}</th>
+                                <th>{{ __('Estado') }}</th>
+                                <th>{{ __('Observación') }}</th>
                                 <th>{{ __('Acciones') }}</th>
                             </tr>
                             </thead>
 
                             <tbody>
-                            @forelse($clients as $client)
+                            @forelse($receptionists as $receptionist)
                                 <tr>
-                                    <td>{{ $client->name }}</td>
-                                    <td>{{ $client->document }}</td>
-                                    <td>{{ $client->nationality->nationality }}</td>
-                                    <td>{{ $client->phone }}</td>
-                                    <td>{{ $client->address }}</td>
+                                    <td>{{ $receptionist->name }}</td>
+                                    <td>{{ $receptionist->document }}</td>
+                                    <td>{{ $receptionist->phone }}</td>
+                                    <td>{{ $receptionist->address }}</td>
+                                    <td>{{ $receptionist->status }}</td>
+                                    <td>{{ $receptionist->observation }}</td>
                                     <td class="text-right">
 
                                         <!-- CRUD buttons -->
                                         <div aria-label="{{ __('Actions') }}">
-                                            <a href="{{ route('clients.show', $client) }}"
+                                            <a href="{{ route('receptionists.show', $receptionist) }}"
                                                class="btn btn-outline-info"> Ver
                                                 <i class="fas fa-eye"></i>
                                             </a>
-                                            <a href="{{ route('clients.edit', $client) }}"
+                                            <a href="{{ route('receptionists.edit', $receptionist) }}"
                                                class="btn btn-outline-secondary"> Editar
                                                 <i class="fas fa-edit"></i>
                                             </a>
 
                                                 <button type="button" class="btn btn-outline-danger"
-                                                        data-route="{{ route('clients.destroy', $client) }}"
+                                                        data-route="{{ route('receptionists.destroy', $receptionist) }}"
                                                         data-toggle="modal" data-target="#confirmDeleteModal">
                                                     Eliminar
                                                     <i class="fas fa-trash"></i>
@@ -75,7 +77,7 @@
                                     </td>
                                 </tr>
 
-                                <!-- Alert when there are no clients -->
+                                <!-- Alert when there are no receptionists -->
                             @empty
                                 <tr>
                                     <p class="alert alert-secondary text-center">
@@ -88,7 +90,7 @@
 
                         <!-- Pagination -->
                         <ul class="pagination justify-content-center">
-                            {{ $clients->links() }}
+                            {{ $receptionists->links() }}
                         </ul>
 
                     </div>

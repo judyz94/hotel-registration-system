@@ -26,14 +26,14 @@ class RoomTypeController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @param RoomType $roomType
+     * @param RoomType $type
      * @return Application|Factory|View
      */
-    public function create(RoomType $roomType)
+    public function create(RoomType $type)
     {
         $types = RoomType::all();
 
-        return view('types.create', compact('types', 'roomType'));
+        return view('types.create', compact('types', 'type'));
     }
 
     /**
@@ -52,39 +52,39 @@ class RoomTypeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param RoomType $roomType
+     * @param RoomType $type
      * @return Application|Factory|View
      */
-    public function show(RoomType $roomType)
+    public function show(RoomType $type)
     {
         $types = RoomType::all();
 
-        return view('types.show',  compact('types', 'roomType'));
+        return view('types.show',  compact('types', 'type'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param RoomType $roomType
+     * @param RoomType $type
      * @return Application|Factory|View
      */
-    public function edit(RoomType $roomType)
+    public function edit(RoomType $type)
     {
         $types = RoomType::all();
 
-        return view('types.edit',  compact('types', 'roomType'));
+        return view('types.edit',  compact('types', 'type'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param RoomType $roomType
+     * @param RoomType $type
      * @return RedirectResponse
      */
-    public function update(Request $request, RoomType $roomType)
+    public function update(Request $request, RoomType $type)
     {
-        $roomType->update($request->all());
+        $type->update($request->all());
 
         return redirect()->route('types.index')->with('info', 'Tipo de habitación actualizada satisfactoriamente.');
     }
@@ -92,12 +92,13 @@ class RoomTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param RoomType $roomType
+     * @param RoomType $type
      * @return RedirectResponse
+     * @throws \Exception
      */
-    public function destroy(RoomType $roomType)
+    public function destroy(RoomType $type)
     {
-        $roomType->delete();
+        $type->delete();
 
         return redirect()->route('types.index')->with('info', 'Tipo de habitación eliminada satisfactoriamente.');
     }
