@@ -10,7 +10,6 @@
                     </div>
 
                     <div class="card-body">
-
                         <form action="{{ route('clients.store') }}" method="post" id="clients-form">
                             @csrf
                             <div class="row">
