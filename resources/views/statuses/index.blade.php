@@ -22,7 +22,7 @@
                         <h3 class="card-title mb-0"><strong>Estados de Alquiler  <i class="fas fa-thumbtack"></i></strong></h3>
                     </div>
 
-                    <!-- Create new client -->
+                    <!-- Create new status -->
                     <nav class="navbar navbar-light bg-light">
                         <a href="{{ route('statuses.create') }}"
                            class="btn btn-success">
@@ -30,7 +30,7 @@
                         </a>
                     </nav>
 
-                    <!-- statuses list -->
+                    <!-- Statuses list -->
                     <div class="table-responsive-xl">
                         <table class="table table-hover">
                             <thead>

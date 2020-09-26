@@ -22,7 +22,7 @@
                         <h3 class="card-title mb-0"><strong>Alquileres <i class="fas fa-bell"></i></strong></h3>
                     </div>
 
-                    <!-- Create new client -->
+                    <!-- Create new rental -->
                     <nav class="navbar navbar-light bg-light">
                         <a href="{{ route('rentals.create') }}"
                            class="btn btn-success">

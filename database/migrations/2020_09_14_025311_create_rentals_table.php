@@ -15,8 +15,8 @@ class CreateRentalsTable extends Migration
     {
         Schema::create('rentals', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('check_in');
-            $table->dateTime('check_out');
+            $table->date('check_in');
+            $table->date('check_out');
             $table->double('total_cost', 8, 2);
             $table->mediumText('observation')->nullable();
             $table->unsignedBigInteger('room_id');

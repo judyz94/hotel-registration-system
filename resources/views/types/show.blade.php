@@ -9,7 +9,7 @@
                         <h4 class="card-title"><strong>{{ __('Habitación tipo') }} {{ $type->name }}</strong></h4>
                     </div>
 
-                    <!-- Nationality detail information -->
+                    <!-- Room type detail information -->
                     <div class="card-body">
                         <dl class="row">
                             <dt class="col-md-3">{{ __('Nombre') }}</dt>

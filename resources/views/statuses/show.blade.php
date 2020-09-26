@@ -9,7 +9,7 @@
                         <h4 class="card-title"><strong>{{ __('Estado') }} <i class="fas fa-arrow-right"></i>  {{ $status->name }}</strong></h4>
                     </div>
 
-                    <!-- client detail information -->
+                    <!-- Status detail information -->
                     <div class="card-body">
                         <dl class="row">
                             <dt class="col-md-3">{{ __('Nombre') }}</dt>

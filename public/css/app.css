@@ -10899,12 +10899,15 @@ a.text-dark:focus {
   }
 }
 
+.back {
+  background-color: whitesmoke;
+}
+
 #wrapper {
   overflow-x: hidden;
 }
 
 #sidebar-wrapper {
-  background-color: #2d3748;
   min-height: 240vh;
   margin-left: -15rem;
   transition: margin 0.25s ease-out;
@@ -10924,6 +10927,7 @@ a.text-dark:focus {
 }
 
 #wrapper.toggled #sidebar-wrapper {
+  background-color: #5d561b;
   margin-left: 0;
 }
 
@@ -10938,6 +10942,7 @@ a.text-dark:focus {
   }
 
   #page-content-wrapper {
+    background-color: #6574cd;
     min-width: 0;
     width: 100%;
   }

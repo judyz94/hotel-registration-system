@@ -22,7 +22,7 @@
                         <h3 class="card-title mb-0"><strong>Tipos de Habitaciones <i class="fas fa-key"></i></strong></h3>
                     </div>
 
-                    <!-- Create new client -->
+                    <!-- Create new room type -->
                     <nav class="navbar navbar-light bg-light">
                         <a href="{{ route('types.create') }}"
                            class="btn btn-success">
@@ -30,7 +30,7 @@
                         </a>
                     </nav>
 
-                    <!-- Clients list -->
+                    <!-- Room types list -->
                     <div class="table-responsive-xl">
                         <table class="table table-hover">
                             <thead>
@@ -69,7 +69,7 @@
                                     </td>
                                 </tr>
 
-                                <!-- Alert when there are no clients -->
+                                <!-- Alert when there are no room types -->
                             @empty
                                 <tr>
                                     <p class="alert alert-secondary text-center">

@@ -22,7 +22,7 @@
                         <h3 class="card-title mb-0"><strong>Nacionalidades <i class="fas fa-flag"></i></strong></h3>
                     </div>
 
-                    <!-- Create new client -->
+                    <!-- Create new nationality -->
                     <nav class="navbar navbar-light bg-light">
                         <a href="{{ route('nationalities.create') }}"
                            class="btn btn-success">
@@ -30,7 +30,7 @@
                         </a>
                     </nav>
 
-                    <!-- nationalities list -->
+                    <!-- Nationalities list -->
                     <div class="table-responsive-xl">
                         <table class="table table-hover">
                             <thead>

@@ -22,7 +22,7 @@
                         <h3 class="card-title mb-0"><strong>Registradores <i class="fas fa-concierge-bell"></i></strong></h3>
                     </div>
 
-                    <!-- Create new client -->
+                    <!-- Create new receptionist -->
                     <nav class="navbar navbar-light bg-light">
                         <a href="{{ route('receptionists.create') }}"
                            class="btn btn-success">
@@ -30,7 +30,7 @@
                         </a>
                     </nav>
 
-                    <!-- receptionists list -->
+                    <!-- Receptionists list -->
                     <div class="table-responsive-xl">
                         <table class="table table-hover">
                             <thead>

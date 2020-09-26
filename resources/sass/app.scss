@@ -7,13 +7,15 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+.back {
+    background-color: whitesmoke;
+}
 
 #wrapper {
     overflow-x: hidden;
 }
 
 #sidebar-wrapper {
-    background-color: #2d3748;
     min-height: 240vh;
     margin-left: -15rem;
     -webkit-transition: margin .25s ease-out;
@@ -36,6 +38,7 @@
 }
 
 #wrapper.toggled #sidebar-wrapper {
+    background-color: #5d561b;
     margin-left: 0;
 }
 
@@ -50,6 +53,7 @@
     }
 
     #page-content-wrapper {
+        background-color: #6574cd;
         min-width: 0;
         width: 100%;
     }

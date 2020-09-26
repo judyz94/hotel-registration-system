@@ -11,6 +11,7 @@ class Rental extends Model
     use HasFactory;
 
     protected $fillable = ['check_in', 'check_out', 'total_cost', 'observation', 'room_id', 'client_id', 'receptionist_id', 'status_id'];
+    protected $guarded = [];
 
     public function room(): BelongsTo
     {
