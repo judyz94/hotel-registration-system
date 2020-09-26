@@ -19,7 +19,7 @@
 
                 <div class="card shadow-lg">
                     <div class="card-header d-flex justify-content-between">
-                        <h3 class="card-title mb-0"><strong>Registradores <i class="fas fa-users"></i></strong></h3>
+                        <h3 class="card-title mb-0"><strong>Registradores <i class="fas fa-concierge-bell"></i></strong></h3>
                     </div>
 
                     <!-- Create new client -->
@@ -40,8 +40,7 @@
                                 <th>{{ __('Teléfono') }}</th>
                                 <th>{{ __('Dirección') }}</th>
                                 <th>{{ __('Estado') }}</th>
-                                <th>{{ __('Observación') }}</th>
-                                <th>{{ __('Acciones') }}</th>
+                                <th class="text-right">{{ __('Acciones') }}</th>
                             </tr>
                             </thead>
 
@@ -53,7 +52,6 @@
                                     <td>{{ $receptionist->phone }}</td>
                                     <td>{{ $receptionist->address }}</td>
                                     <td>{{ $receptionist->status }}</td>
-                                    <td>{{ $receptionist->observation }}</td>
                                     <td class="text-right">
 
                                         <!-- CRUD buttons -->

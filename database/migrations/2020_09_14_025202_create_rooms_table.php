@@ -16,7 +16,7 @@ class CreateRoomsTable extends Migration
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->integer('number')->unique();
-            $table->enum('status', ['Available', 'Not Available']);
+            $table->enum('status', ['Disponible', 'No Disponible']);
             $table->double('cost', 8, 2);
             $table->mediumText('description')->nullable();
             $table->unsignedBigInteger('type_id');

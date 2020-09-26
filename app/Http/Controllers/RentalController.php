@@ -101,18 +101,4 @@ class RentalController extends Controller
 
         return redirect()->route('rentals.index')->with('info', 'Alquiler actualizado satisfactoriamente.');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param Rental $rental
-     * @return RedirectResponse
-     * @throws \Exception
-     */
-    public function destroy(Rental $rental)
-    {
-        $rental->delete();
-
-        return redirect()->route('rentals.index')->with('info', 'Alquiler eliminado satisfactoriamente.');
-    }
 }

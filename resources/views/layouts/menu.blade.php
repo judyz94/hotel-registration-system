@@ -21,7 +21,12 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">Hotel Soft</div>
         <div class="list-group list-group-flush">
-            <a href="{{ route('rentals.index') }}" class="list-group-item list-group-item-action bg-light">Alquileres</a>
+            <a class="list-group-item list-group-item-action bg-light" href="#" id="alquileres" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Alquileres
+            </a>
+            <a class="dropdown-item" href="{{ route('rentals.index') }}">Alquileres</a>
+            <a class="dropdown-item" href="{{ route('statuses.index') }}">Estados de Alquiler</a>
+
 
             <a class="list-group-item list-group-item-action bg-light" href="#" id="habitaciones" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Habitaciones
@@ -35,7 +40,11 @@
                 <a class="dropdown-item" href="{{ route('clients.index') }}">Clientes</a>
                 <a class="dropdown-item" href="{{ route('nationalities.index') }}">Nacionalidades</a>
 
-            <a href="{{ route('receptionists.index') }}" class="list-group-item list-group-item-action bg-light">Registradores</a>
+            <a class="list-group-item list-group-item-action bg-light" href="#" id="registradores" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Registradores
+            </a>
+            <a class="dropdown-item" href="{{ route('receptionists.index') }}">Registradores</a>
+
         </div>
     </div>
     <!-- /#sidebar-wrapper -->

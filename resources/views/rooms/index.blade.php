@@ -3,12 +3,12 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-xl">
+            <div class="col-md-10">
 
                 @if(session('info'))
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-12 col-md-offset-2">
+                            <div class="col-md-10 col-md-offset-2">
                                 <div class="alert alert-info">
                                     {{ session('info') }}
                                 </div>
@@ -19,54 +19,52 @@
 
                 <div class="card shadow-lg">
                     <div class="card-header d-flex justify-content-between">
-                        <h3 class="card-title mb-0"><strong>Clientes <i class="fas fa-users"></i></strong></h3>
+                        <h3 class="card-title mb-0"><strong>Habitaciones <i class="fas fa-door-closed"></i></strong></h3>
                     </div>
 
                     <!-- Create new client -->
                     <nav class="navbar navbar-light bg-light">
-                        <a href="{{ route('clients.create') }}"
+                        <a href="{{ route('rooms.create') }}"
                            class="btn btn-success">
-                            <i class="fas fa-plus"></i> Crear nuevo cliente
+                            <i class="fas fa-plus"></i> Crear nueva habitacion
                         </a>
                     </nav>
 
-                    <!-- Clients list -->
+                    <!-- rooms list -->
                     <div class="table-responsive-xl">
                         <table class="table table-hover">
                             <thead>
                             <tr>
-                                <th>{{ __('Nombre') }}</th>
-                                <th>{{ __('Documento') }}</th>
-                                <th>{{ __('Nacionalidad') }}</th>
-                                <th>{{ __('Teléfono') }}</th>
-                                <th>{{ __('Dirección') }}</th>
-                                <th>{{ __('Acciones') }}</th>
+                                <th>{{ __('Número') }}</th>
+                                <th>{{ __('Estado') }}</th>
+                                <th>{{ __('Costo') }}</th>
+                                <th>{{ __('Tipo') }}</th>
+                                <th class="text-right">{{ __('Acciones') }}</th>
                             </tr>
                             </thead>
 
                             <tbody>
-                            @forelse($clients as $client)
+                            @forelse($rooms as $room)
                                 <tr>
-                                    <td>{{ $client->name }}</td>
-                                    <td>{{ $client->document }}</td>
-                                    <td>{{ $client->nationality->nationality }}</td>
-                                    <td>{{ $client->phone }}</td>
-                                    <td>{{ $client->address }}</td>
+                                    <td>{{ $room->number }}</td>
+                                    <td>{{ $room->status }}</td>
+                                    <td>${{ number_format($room->cost, 2)}}</td>
+                                    <td>{{ $room->type->name }}</td>
                                     <td class="text-right">
 
                                         <!-- CRUD buttons -->
                                         <div aria-label="{{ __('Actions') }}">
-                                            <a href="{{ route('clients.show', $client) }}"
+                                            <a href="{{ route('rooms.show', $room) }}"
                                                class="btn btn-outline-info"> Ver
                                                 <i class="fas fa-eye"></i>
                                             </a>
-                                            <a href="{{ route('clients.edit', $client) }}"
+                                            <a href="{{ route('rooms.edit', $room) }}"
                                                class="btn btn-outline-secondary"> Editar
                                                 <i class="fas fa-edit"></i>
                                             </a>
 
                                                 <button type="button" class="btn btn-outline-danger"
-                                                        data-route="{{ route('clients.destroy', $client) }}"
+                                                        data-route="{{ route('rooms.destroy', $room) }}"
                                                         data-toggle="modal" data-target="#confirmDeleteModal">
                                                     Eliminar
                                                     <i class="fas fa-trash"></i>
@@ -75,7 +73,7 @@
                                     </td>
                                 </tr>
 
-                                <!-- Alert when there are no clients -->
+                                <!-- Alert when there are no rooms -->
                             @empty
                                 <tr>
                                     <p class="alert alert-secondary text-center">
@@ -88,7 +86,7 @@
 
                         <!-- Pagination -->
                         <ul class="pagination justify-content-center">
-                            {{ $clients->links() }}
+                            {{ $rooms->links() }}
                         </ul>
 
                     </div>

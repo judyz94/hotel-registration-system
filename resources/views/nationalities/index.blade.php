@@ -19,7 +19,7 @@
 
                 <div class="card shadow-lg">
                     <div class="card-header d-flex justify-content-between">
-                        <h3 class="card-title mb-0"><strong>Nacionalidades <i class="fas fa-users"></i></strong></h3>
+                        <h3 class="card-title mb-0"><strong>Nacionalidades <i class="fas fa-flag"></i></strong></h3>
                     </div>
 
                     <!-- Create new client -->

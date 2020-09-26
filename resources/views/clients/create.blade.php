@@ -42,7 +42,7 @@
                                             <option value="">{{ __('Seleccione el país de procedencia') }}</option>
                                             @foreach($nationalities as $nationality)
                                                 <option value="{{ $nationality->id }}"
-                                                    {{ old('city_id', $client->nationality_id) == $nationality->id ? 'selected' : ''}}>{{ $nationality->country }}
+                                                    {{ old('nationality_id', $client->nationality_id) == $nationality->id ? 'selected' : ''}}>{{ $nationality->country }}
                                                 </option>
                                             @endforeach
                                         </select>

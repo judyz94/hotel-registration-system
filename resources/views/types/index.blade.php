@@ -8,7 +8,7 @@
                 @if(session('info'))
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-12 col-md-offset-2">
+                            <div class="col-md-10 col-md-offset-2">
                                 <div class="alert alert-info">
                                     {{ session('info') }}
                                 </div>
@@ -19,7 +19,7 @@
 
                 <div class="card shadow-lg">
                     <div class="card-header d-flex justify-content-between">
-                        <h3 class="card-title mb-0"><strong>Tipos de Habitaciones <i class="fas fa-users"></i></strong></h3>
+                        <h3 class="card-title mb-0"><strong>Tipos de Habitaciones <i class="fas fa-key"></i></strong></h3>
                     </div>
 
                     <!-- Create new client -->

@@ -19,7 +19,7 @@ class CreateReceptionistsTable extends Migration
             $table->string('address', 40)->nullable();
             $table->string('document', 40)->unique();
             $table->string('phone', 30);
-            $table->enum('status', ['Active', 'Inactive']);
+            $table->enum('status', ['Activo', 'Inactivo']);
             $table->mediumText('observation')->nullable();
             $table->timestamps();
         });

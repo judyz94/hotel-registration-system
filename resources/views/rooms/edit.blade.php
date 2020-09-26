@@ -6,20 +6,20 @@
         <div class="col-md-10">
             <div class="card shadow-lg">
                 <div class="card-header pb-0">
-                    <h4 class="card-title"><strong>{{ __('Editar Cliente ') }} <i class="fas fa-arrow-right"></i>  {{ $client->name }} </strong></h4>
+                    <h4 class="card-title"><strong>{{ __('Editar Habitación N°') }} {{ $room->number }} </strong></h4>
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('clients.update', $client) }}" method="post" id="clients-form">
+                    <form action="{{ route('rooms.update', $room) }}" method="post" id="rooms-form">
                         @csrf
                         @method('put')
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="name" class="required">{{ __('Nombre') }}</label>
-                                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="{{ __('Ingrese el nombre') }}"
-                                           value="{{ old('name', $client->name) }}" required>
-                                    @error('name')
+                                    <label for="number" class="required">{{ __('Número') }}</label>
+                                    <input type="number" class="form-control @error('number') is-invalid @enderror" id="number" name="number" placeholder="{{ __('Ingrese el número de la habitación') }}"
+                                           value="{{ old('number', $room->number) }}" required>
+                                    @error('number')
                                     <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                                     @enderror
                                 </div>
@@ -27,10 +27,13 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="document" class="required">{{ __('Documento de Identidad') }}</label>
-                                    <input type="number" class="form-control @error('document') is-invalid @enderror" id="document" name="document" placeholder="{{ __('Ingrese el documento de identidad') }}"
-                                           value="{{ old('document', $client->document) }}" required>
-                                    @error('document')
+                                    <label for="status" class="required">{{ __('Estado') }}</label>
+                                    <select class="custom-select @error('status') is-invalid @enderror" id="status" name="status" required>
+                                        <option value="">{{ __('Seleccione el estado') }}</option>
+                                        <option value="Disponible" @if($room->status == "Disponible") selected  @endif>Disponible</option>
+                                        <option value="No Disponible" @if($room->status == "No Disponible") selected  @endif>No Disponible</option>
+                                    </select>
+                                    @error('status')
                                     <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                                     @enderror
                                 </div>
@@ -38,16 +41,28 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="nationality_id" class="required">{{ __('País') }}</label>
-                                    <select class="custom-select @error('nationality_id') is-invalid @enderror" id="nationality_id" name="nationality_id" required>
-                                        <option value="">{{ __('Seleccione el país de procedencia') }}</option>
-                                        @foreach($nationalities as $nationality)
-                                            <option value="{{ $nationality->id }}"
-                                                {{ old('city_id', $client->nationality_id) == $nationality->id ? 'selected' : ''}}>{{ $nationality->country }}
+                                    <label for="cost" class="required">{{ __('Costo') }}</label>
+                                    <input type="number" class="form-control @error('cost') is-invalid @enderror" id="cost" name="cost" placeholder="{{ __('Ingrese el número de la habitación') }}"
+                                           value="{{ old('cost', $room->cost) }}" required>
+                                    @error('cost')
+                                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                                    @enderror
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="type_id" class="required">{{ __('Tipo') }}</label>
+                                    <select class="custom-select @error('type_id') is-invalid @enderror" id="type_id" name="type_id" required>
+                                        <option value="">{{ old('type_id', $room->status) }}</option>
+                                        @foreach($types as $type)
+                                            <option value="{{ $type->id }}"
+                                                {{ old('type_id', $room->type_id) == $type->id ? 'selected' : ''}}>{{ $type->name }}
                                             </option>
                                         @endforeach
                                     </select>
-                                    @error('nationality_id')
+                                    @error('type_id')
                                     <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                                     @enderror
                                 </div>
@@ -55,17 +70,11 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="phone">{{ __('Teléfono') }}</label>
-                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="{{ __('Ingrese un teléfono') }}"
-                                           value="{{ old('phone', $client->phone) }}" required>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="address">{{ __('Dirección') }}</label>
-                                    <input type="text" class="form-control" id="address" name="address" placeholder="{{ __('Ingrese la dirección') }}"
-                                           value="{{ old('address', $client->address) }}">
+                                    <label for="description" class="required">{{ __('Descripción') }}</label>
+                                    <textarea class="form-control" id="description" name="description" placeholder="{{ __('Ingrese la descripción') }}">{{ old('description', $room->description) }}</textarea>
+                                    @error('description')
+                                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -73,10 +82,10 @@
                 </div>
 
                 <div class="card-footer d-flex justify-content-between">
-                    <a href="{{ route('clients.index') }}" class="btn btn-danger">
+                    <a href="{{ route('rooms.index') }}" class="btn btn-danger">
                         <i class="fas fa-arrow-left"></i> {{ __('Cancelar') }}
                     </a>
-                    <button type="submit" class="btn btn-success" form="clients-form">
+                    <button type="submit" class="btn btn-success" form="rooms-form">
                         <i class="fas fa-save"></i> {{ __('Actualizar') }}
                     </button>
                 </div>

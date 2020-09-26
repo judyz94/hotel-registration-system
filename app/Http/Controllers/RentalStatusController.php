@@ -50,19 +50,6 @@ class RentalStatusController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param Status $status
-     * @return Application|Factory|View
-     */
-    public function show(Status $status)
-    {
-        $statuses = Status::all();
-
-        return view('statuses.show',  compact('statuses', 'status'));
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param Status $status

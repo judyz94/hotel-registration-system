@@ -40,7 +40,7 @@
                                 <th>{{ __('Nacionalidad') }}</th>
                                 <th>{{ __('Teléfono') }}</th>
                                 <th>{{ __('Dirección') }}</th>
-                                <th>{{ __('Acciones') }}</th>
+                                <th class="text-right">{{ __('Acciones') }}</th>
                             </tr>
                             </thead>
 
@@ -65,12 +65,12 @@
                                                 <i class="fas fa-edit"></i>
                                             </a>
 
-                                                <button type="button" class="btn btn-outline-danger"
-                                                        data-route="{{ route('clients.destroy', $client) }}"
-                                                        data-toggle="modal" data-target="#confirmDeleteModal">
-                                                    Eliminar
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
+                                            <button type="button" class="btn btn-outline-danger"
+                                                    data-route="{{ route('clients.destroy', $client) }}"
+                                                    data-toggle="modal" data-target="#confirmDeleteModal">
+                                                Eliminar
+                                                <i class="fas fa-trash"></i>
+                                            </button>
                                         </div>
                                     </td>
                                 </tr>

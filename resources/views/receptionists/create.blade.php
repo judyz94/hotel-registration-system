@@ -6,7 +6,7 @@
             <div class="col-md-10">
                 <div class="card shadow-lg">
                     <div class="card-header pb-0">
-                        <h4 class="card-title"><strong>Nuevo Registrador <i class="fas fa-users"></i></strong></h4>
+                        <h4 class="card-title"><strong>Nuevo Registrador <i class="fas fa-concierge-bell"></i></strong></h4>
                     </div>
 
                     <div class="card-body">
@@ -56,8 +56,8 @@
                                         <label for="status" class="required">{{ __('Estado') }}</label>
                                         <select class="custom-select @error('status') is-invalid @enderror" id="status" name="status" required>
                                             <option value="">{{ __('Seleccione el estado del registrador') }}</option>
-                                            <option value="Active">Activo</option>
-                                            <option value="Inactive">Inactivo</option>
+                                            <option value="Activo">Activo</option>
+                                            <option value="Inactivo">Inactivo</option>
                                         </select>
                                         @error('status')
                                         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>

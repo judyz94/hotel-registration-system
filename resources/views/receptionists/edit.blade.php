@@ -56,9 +56,9 @@
                                 <div class="form-group">
                                     <label for="status" class="required">{{ __('Estado') }}</label>
                                     <select class="custom-select @error('status') is-invalid @enderror" id="status" name="status" required>
-                                        <option value="">{{ old('status', $receptionist->status) }}</option>
-                                        <option value="Active">Activo</option>
-                                        <option value="Inactive">Inactivo</option>
+                                        <option value="">{{ __('Seleccione el estado del registrador') }}</option>
+                                        <option value="Activo" @if($receptionist->status == "Activo") selected  @endif>Activo</option>
+                                        <option value="Inactivo" @if($receptionist->status == "Inactivo") selected  @endif>Inactivo</option>
                                     </select>
                                     @error('status')
                                     <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>

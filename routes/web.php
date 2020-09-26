@@ -27,16 +27,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+    Route::resources([
+        'clients' => ClientController::class,
+        'nationalities' => NationalityController::class,
+        'rooms' => RoomController::class,
+        'types' => RoomTypeController::class,
+        'receptionists' => ReceptionistController::class,
+    ]);
 
-Route::resources([
-    'clients'       => ClientController::class,
-    'nationalities' => NationalityController::class,
-    'rooms'         => RoomController::class,
-    'types'         => RoomTypeController::class,
-    'receptionists' => ReceptionistController::class,
-    'statuses'      => RentalStatusController::class,
-]);
+    Route::resource('rentals', RentalController::class)->except(['destroy']);
+    Route::resource('statuses', RentalStatusController::class)->except(['show']);
 
-Route::resource('rentals', RentalController::class)->except(['destroy']);
+});
