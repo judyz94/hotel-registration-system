@@ -1,57 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Página principal</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body class="back">
+<body>
 <div class="d-flex" id="wrapper">
 @stack('modals')
 
-    <!-- Sidebar -->
+<!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">Hotel Soft</div>
+        <div class="sidebar-heading"><strong>Hotel Soft  <i class="fas fa-hotel"></i></strong></div>
         <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action bg-light" href="#" id="alquileres" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Alquileres
+            <a class="list-group-item list-group-item-action" href="#" id="item" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <strong>Alquileres</strong>
             </a>
-            <a class="dropdown-item" href="{{ route('rentals.index') }}">Alquileres</a>
-            <a class="dropdown-item" href="{{ route('statuses.index') }}">Estados de Alquiler</a>
+            <a class="dropdown-item list-group-item-action bg-light" href="{{ route('rentals.index') }}">Alquileres</a>
+            <a class="dropdown-item list-group-item-action bg-light" href="{{ route('statuses.index') }}">Estados de Alquiler</a>
 
 
-            <a class="list-group-item list-group-item-action bg-light" href="#" id="habitaciones" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Habitaciones
+            <a class="list-group-item list-group-item-action" href="#" id="item" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <strong>Habitaciones</strong>
             </a>
-                <a class="dropdown-item" href="{{ route('rooms.index') }}">Habitaciones</a>
-                <a class="dropdown-item" href="{{ route('types.index') }}">Tipos de habitaciones</a>
+            <a class="dropdown-item list-group-item-action bg-light" href="{{ route('rooms.index') }}">Habitaciones</a>
+            <a class="dropdown-item list-group-item-action bg-light" href="{{ route('types.index') }}">Tipos de habitaciones</a>
 
-            <a class="list-group-item list-group-item-action bg-light" href="#" id="clientes" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Clientes
+            <a class="list-group-item list-group-item-action" href="#" id="item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <strong>Clientes</strong>
             </a>
-                <a class="dropdown-item" href="{{ route('clients.index') }}">Clientes</a>
-                <a class="dropdown-item" href="{{ route('nationalities.index') }}">Nacionalidades</a>
+            <a class="dropdown-item list-group-item-action bg-light" href="{{ route('clients.index') }}">Clientes</a>
+            <a class="dropdown-item list-group-item-action bg-light" href="{{ route('nationalities.index') }}">Nacionalidades</a>
 
-            <a class="list-group-item list-group-item-action bg-light" href="#" id="registradores" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Registradores
+            <a class="list-group-item list-group-item-action" href="#" id="item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <strong>Registradores</strong>
             </a>
-            <a class="dropdown-item" href="{{ route('receptionists.index') }}">Registradores</a>
-
+            <a class="dropdown-item list-group-item-action bg-light" href="{{ route('receptionists.index') }}">Registradores</a>
         </div>
+
     </div>
-    <!-- /#sidebar-wrapper -->
 
-    <!-- Page Content -->
     <div id="page-content-wrapper">
-
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -98,6 +101,7 @@
                     </ul>
                 </div>
             </div>
+
         </nav>
 
         <main class="py-5">
@@ -105,16 +109,16 @@
         </main>
 
     </div>
-    <!-- /#page-content-wrapper -->
+
     <!-- JS, Popper.js, and jQuery -->
     <script src="{{ asset(mix('js/app.js')) }}"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
     @stack('scripts')
 </div>
-<!-- /#wrapper -->
-
 </body>
 </html>
+

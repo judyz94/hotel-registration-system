@@ -10899,6 +10899,11 @@ a.text-dark:focus {
   }
 }
 
+.list-group-item list-group-item-action bg-dark {
+  color: white;
+  background-color: white;
+}
+
 .back {
   background-color: whitesmoke;
 }
@@ -10938,11 +10943,12 @@ a.text-dark:focus {
 
 @media (min-width: 768px) {
   #sidebar-wrapper {
+    background-color: #0c5460;
     margin-left: 0;
   }
 
   #page-content-wrapper {
-    background-color: #6574cd;
+    background-color: #0c5460;
     min-width: 0;
     width: 100%;
   }
