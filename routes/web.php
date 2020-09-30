@@ -25,14 +25,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pag', function () {
-    return view('layouts/pag');
-});
-
-Route::get('/app', function () {
-    return view('layouts/app');
-});
-
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {

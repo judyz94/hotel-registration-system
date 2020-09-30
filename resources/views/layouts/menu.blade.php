@@ -16,16 +16,21 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div class="d-flex" id="wrapper">
+<div class="app d-flex" id="wrapper">
 @stack('modals')
 
 <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading"><strong>Hotel Soft  <i class="fas fa-hotel"></i></strong></div>
+        <div class="sidebar-heading">
+            <a class="list-group-item list-group-item-action" href="{{ route('home')}}"><strong>Hotel Soft  <i class="fas fa-hotel"></i></strong></a>
+        </div>
         <div class="list-group list-group-flush">
             <a class="list-group-item list-group-item-action" href="#" id="item" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <strong>Alquileres</strong>
